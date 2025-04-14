@@ -1,27 +1,27 @@
 ﻿@model Gonzalez_F_Liga_Pro.Models.Equipo
 
 @{
-    ViewData["Title"] = "Edit";
-}
-// Diccionario de logos por nombre de equipo
+	ViewData["Title"] = "Edit";
+
+	// Diccionario de logos por nombre de equipo
 	var logos = new Dictionary<string, string>
 	{
-	{ "Barcelona", "https://upload.wikimedia.org/wikipedia/commons/6/6a/Barcelona_Sporting_Club_Logo.png" },
-	{ "Liga", "https://upload.wikimedia.org/wikipedia/commons/5/50/LOGOS_5TA._ESTRELLA_I.png" },
-	{ "Emelec", "https://logodownload.org/wp-content/uploads/2018/04/emelec-logo-escudo.png" },
-	{ "Macara", "https://cdn.conmebol.com/wp-content/uploads/2014/09/macara.jpg" },
-	{ "Aucas", "https://academias.aucas.ec/wp-content/uploads/2024/08/LOGO-ACADEMIA-NUEVO-2-274x300.png" }
+		{ "Barcelona", "https://upload.wikimedia.org/wikipedia/commons/6/6a/Barcelona_Sporting_Club_Logo.png" },
+		{ "Liga", "https://upload.wikimedia.org/wikipedia/commons/5/50/LOGOS_5TA._ESTRELLA_I.png" },
+		{ "Emelec", "https://logodownload.org/wp-content/uploads/2018/04/emelec-logo-escudo.png" },
+		{ "Macara", "https://cdn.conmebol.com/wp-content/uploads/2014/09/macara.jpg" },
+		{ "Aucas", "https://academias.aucas.ec/wp-content/uploads/2024/08/LOGO-ACADEMIA-NUEVO-2-274x300.png" }
 	};
 
 	string logoUrl = logos.ContainsKey(Model.Nombre) ? logos[Model.Nombre] : "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Football_of_Ecuador_-_Liga_Pro_logo_%28normal%29.svg/1200px-Football_of_Ecuador_-_Liga_Pro_logo_%28normal%29.svg.png";
-	}
+}
 
-	<h2>@Model.Nombre</h2>
+<h2>@Model.Nombre</h2>
 
-	<img src="@logoUrl" alt="Logo de @Model.Nombre" style="height: 100px;" />
+<img src="@logoUrl" alt="Logo de @Model.Nombre" style="height: 100px;" />
 
+<p>El grna equipo <strong>@Model.Nombre</strong>, grandes prospectos del futbolEcuatoriano.</p>
 
-	<p>Este es el equipo <strong>@Model.Nombre</strong>, uno de los grandes del fútbol ecuatoriano.</p>
 
 	<form asp-action="Edit" method="post">
 		<input type="hidden" asp-for="Id" />

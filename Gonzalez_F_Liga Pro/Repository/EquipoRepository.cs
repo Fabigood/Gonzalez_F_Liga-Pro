@@ -65,7 +65,7 @@ namespace Gonzalez_F_Liga_Pro.Repository
             return Equipos;
         }
 
-        public Equipo DevuelveEquipoPorID(int Id)
+        public Equipo? DevuelveEquipoPorID(int Id)
         {
             return Equipos.FirstOrDefault(e => e.Id == Id);
         }
@@ -81,6 +81,16 @@ namespace Gonzalez_F_Liga_Pro.Repository
             }
             return false;
         }
+        public void EliminaEquipo(int id)
+        {
+            var equipo = Equipos.FirstOrDefault(e => e.Id == id);
+            if (equipo != null)
+            {
+                Equipos.Remove(equipo);
+            }
+        }
+
+
     }
 }
 
