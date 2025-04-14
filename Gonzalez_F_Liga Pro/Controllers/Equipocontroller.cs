@@ -15,10 +15,12 @@ namespace Gonzalez_F_Liga_Pro.Controllers
         public ActionResult List()
         {
 
+           
             var equipos = _repository.DevuelveListadoEquipos();
 
-            equipos = equipos.OrderByDescending(item => item.Puntos);
-
+            equipos = equipos
+                .OrderByDescending(item => item.PartidosGanados);
+                
 
             return View(equipos);
 
@@ -36,6 +38,9 @@ namespace Gonzalez_F_Liga_Pro.Controllers
             var equipo = _repository.DevuelveEquipoPorID(Id);
             return View(equipo);
         }
+
+
+
         [HttpPost]
         public ActionResult Edit(int Id, Equipo equipo)
         {
@@ -50,6 +55,6 @@ namespace Gonzalez_F_Liga_Pro.Controllers
                 return View();
             }
         }
-
+       
     }
 }
