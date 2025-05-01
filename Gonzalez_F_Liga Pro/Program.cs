@@ -1,4 +1,9 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using Gonzalez_F_Liga_Pro.Data;
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<Gonzalez_F_Liga_ProContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("Gonzalez_F_Liga_ProContext") ?? throw new InvalidOperationException("Connection string 'Gonzalez_F_Liga_ProContext' not found.")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
