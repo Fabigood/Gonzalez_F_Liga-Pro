@@ -25,9 +25,11 @@ namespace Gonzalez_F_Liga_Pro.Models
         {
             get
             {
-                return (PartidosGanados * 3) + PartidosEmpatados;
+                return (PartidosGanados * 3) + (PartidosEmpatados*1);
             }
-            set { }
+            
         }
+        public virtual ICollection<Jugador> Jugadores { get; set; }
+
     }
 }
