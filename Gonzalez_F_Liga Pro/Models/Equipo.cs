@@ -29,7 +29,7 @@ namespace Gonzalez_F_Liga_Pro.Models
             }
             
         }
-        public virtual ICollection<Jugador> Jugadores { get; set; }
+        public virtual ICollection<Jugador>? Jugadores { get; set; }
 
     }
 }

@@ -25,6 +25,6 @@ namespace Gonzalez_F_Liga_Pro.Models
         // Relación: Jugador pertenece a un equipo
         [ForeignKey("Equipo")]
         public int EquipoId { get; set; }
-        public virtual Equipo Equipo { get; set; }
+        public virtual Equipo? Equipo { get; set; }
     }
 }
